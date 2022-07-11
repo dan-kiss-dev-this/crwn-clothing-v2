@@ -3,7 +3,7 @@ import { Link, Outlet, Route, Routes } from 'react-router-dom';
 
 
 
-const App = () => {
+const Home = () => {
   const categories = [
     {
       "id": 1,
@@ -39,4 +39,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

@@ -48,7 +48,7 @@ const App = () => {
 
     <Routes>
       <Route path="/" element={<Navigation />}>
-        <Route index element={<Directory categories={categories} />}></Route>
+        <Route index element={<Home />}></Route>
       </Route>
     </Routes>
   );
