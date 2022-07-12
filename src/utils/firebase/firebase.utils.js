@@ -1,0 +1,40 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAz_8mPuS4TwzEbUUkxQLIYWFz-IcFlUyQ",
+  authDomain: "crwn-clothing-db-e8072.firebaseapp.com",
+  projectId: "crwn-clothing-db-e8072",
+  storageBucket: "crwn-clothing-db-e8072.appspot.com",
+  messagingSenderId: "489054031564",
+  appId: "1:489054031564:web:b0924cfc5e47744feebc69"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const provider = new GoogleAuthProvider();
+
+provider.setCustomParameters({
+  prompt: 'select_account'
+});
+
+export const auth = getAuth();
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
+
+export const db = getFirestore()
+
+export const createUserDocumentFromAuth = async (userAuth) => {
+  const userDocRef = doc(db, 'users', userAuth.user.uid)
+  console.log(34, userDocRef);
+
+  const userSnapshot = await getDoc(userDocRef)
+  console.log('userSnapshot', userSnapshot,  userSnapshot.exists())
+}
+
+// const auth = getAuth(app);
