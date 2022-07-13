@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { signInWithGooglePopup, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils'
 
 
@@ -14,7 +15,7 @@ export default function SignIn() {
   return (
     <div>
       <h1>Sign In Page</h1>
-      <button onClick={logGoogleUser}>signin</button>
+      <button onClick={logGoogleUser}>Sign in with Google Popup</button>
     </div>
   )
 }
