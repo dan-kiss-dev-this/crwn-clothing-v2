@@ -5,6 +5,8 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
+import './sign-up-form.styles.scss'
+
 import FormInput from './../form-input/form-input.component';
 
 const defaultFormFields = {
