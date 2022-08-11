@@ -7,7 +7,7 @@ import {
 
 import Button from '../button/button.component';
 
-import './sign-up-form.styles.scss'
+import './sign-up-form.styles.scss';
 
 import FormInput from './../form-input/form-input.component';
 
@@ -97,6 +97,15 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
         <Button type="submit">Sign Up</Button>
+      </form>
+      <form>
+        <div>I alread have an account</div>
+        <div>Sign in with your email and password</div>
+
+        <FormInput label="Email"></FormInput>
+        <FormInput label="Password"></FormInput>
+        <Button >Sign In</Button>
+        <Button buttonType='google'>Sign In with Google</Button>
       </form>
     </div>
   );
